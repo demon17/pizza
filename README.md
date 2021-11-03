@@ -7,6 +7,7 @@ Requirements are to create a pizza preparation with Laravel, Vue JS & Bootstrap 
 # Installation
 
 1. `composer install` && `composer update`
+1. `php artisan migrate`   
 1. `npm install`
 1. `npm run dev`
 1. `php artisan serve`
