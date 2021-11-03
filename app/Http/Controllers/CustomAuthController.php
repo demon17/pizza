@@ -36,7 +36,7 @@ class CustomAuthController extends Controller
 
         $credentials = $request->only('email', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect()->intended('index')
+            return redirect()->intended('/')
                 ->withSuccess('Signed in');
         }
 
@@ -67,7 +67,7 @@ class CustomAuthController extends Controller
         $data = $request->all();
         $check = $this->create($data);
 
-        return redirect("index")->withSuccess('You have signed-in');
+        return redirect("user.orders")->withSuccess('You have signed-in');
     }
 
     /**
