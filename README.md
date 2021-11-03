@@ -8,6 +8,7 @@ Requirements are to create a pizza preparation with Laravel, Vue JS & Bootstrap 
 
 1. `composer install` && `composer update`
 1. `php artisan migrate`   
+1. `php artisan db:seed --class=ToppingSeeder`   
 1. `npm install`
 1. `npm run dev`
 1. `php artisan serve`
