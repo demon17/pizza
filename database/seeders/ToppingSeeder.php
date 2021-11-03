@@ -17,35 +17,35 @@ class ToppingSeeder extends Seeder
         DB::table('topping')->insert(
             [
                 [
-                    'name' => 'tomato',
+                    'title' => 'tomato',
                     'price' => 0.5
                 ],
                 [
-                    'name' => 'sliced mushrooms',
+                    'title' => 'sliced mushrooms',
                     'price' => 0.5
                 ],
                 [
-                    'name' => 'feta cheese',
+                    'title' => 'feta cheese',
                     'price' => 1
                 ],
                 [
-                    'name' => 'sausages',
+                    'title' => 'sausages',
                     'price' => 1
                 ],
                 [
-                    'name' => 'sliced onion',
+                    'title' => 'sliced onion',
                     'price' => 0.5
                 ],
                 [
-                    'name' => 'mozzarella cheese',
+                    'title' => 'mozzarella cheese',
                     'price' => 0.3
                 ],
                 [
-                    'name' => 'oregano',
+                    'title' => 'oregano',
                     'price' => 2
                 ],
                 [
-                    'name' => 'bacon',
+                    'title' => 'bacon',
                     'price' => 1
                 ],
             ]
