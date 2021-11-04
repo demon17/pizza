@@ -13,7 +13,7 @@
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Type</label>
-                    <select class="form-control" id="exampleFormControlSelect1" name="type">
+                    <select @change="onChange($event)" class="form-control" id="exampleFormControlSelect1" name="type">
                         <option value="MacDac Pizza"  id="macdac" selected>MacDac Pizza</option>
                         <option value="Lovely Mushroom Pizza" id="mushroom">Lovely Mushroom Pizza</option>
                     </select>
@@ -25,6 +25,9 @@
                             <option value="{{ $topping->title }}" id="{{ $topping->title }}" selected>{{ $topping->title }}  {{ $topping->price }} eur</option>
                         @endforeach
                     </select>
+                </div>
+                <div class="form-group">
+                    <div class="col"> <b>Price:</b>  <span id="price">8.7</span> <b>eur</b> </div>
                 </div>
                 <button class="btn btn-primary" type="submit">Order Now</button>
             </form>
