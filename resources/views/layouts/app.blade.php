@@ -36,7 +36,7 @@
                         <a class="nav-link" href="{{ route('user.orders') }}">Pizza List</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('user.orders.create') }}">Pizza Create</a>
+                        <a class="nav-link" href="{{ route('user.orders.create') }}">Order Pizza</a>
                     </li>
             </ul>
         </div>

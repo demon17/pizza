@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Topping;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -34,7 +35,8 @@ class OrdersController extends Controller
      */
     public function create()
     {
-        return view('create');
+        $toppings = Topping::all();
+        return view('create', ['toppings' => $toppings]);
     }
 
     /**
@@ -67,21 +69,22 @@ class OrdersController extends Controller
     private function calculatePrice(array $toppings)
     {
         $price = 0;
-        $ingredientsPrices = [
-            'tomato' => 0.5,
-            'mushrooms' => 0.5,
-            'cheese' => 1,
-            'sausages' => 1,
-            'onion' => 0.5,
-            'mozzarella' => 0.3,
-            'oregano' => 2,
-            'bacon' => 1,
-        ];
         foreach ($toppings as $topping) {
-            $price += $ingredientsPrices[$topping];
+            $price += $this->getPriceByTitle($topping);
         }
 
         return (float)round($price * 1.5, 2);
+    }
+
+    /**
+     * Get price by title
+     *
+     * @param string $title
+     * @return double
+     */
+    private function getPriceByTitle(string $title)
+    {
+        return (double) Topping::where('title', $title)->get('price')->first()['price'];
     }
 
 }
