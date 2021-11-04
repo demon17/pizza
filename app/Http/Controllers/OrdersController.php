@@ -5,16 +5,19 @@ namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Models\Topping;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
+/**
+ * Class OrdersController
+ * @package App\Http\Controllers
+ */
 class OrdersController extends Controller
 {
-
+    /**
+     * OrdersController constructor.
+     */
     public function __construct()
     {
-        if(!Auth::check()){
-            return redirect("login")->withSuccess('You are not allowed to access');
-        }
+        $this->middleware('auth');
     }
 
     /**

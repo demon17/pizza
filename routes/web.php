@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ToppingController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
 
@@ -23,3 +24,6 @@ Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout')
 Route::get('/orders', 'App\Http\Controllers\OrdersController@index')->name('user.orders');
 Route::get('/orders/create', 'App\Http\Controllers\OrdersController@create')->name('user.orders.create');
 Route::post('/orders', 'App\Http\Controllers\OrdersController@store')->name('user.orders.store');
+
+// Topping resource
+Route::resource('topping', ToppingController::class);

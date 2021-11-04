@@ -38,6 +38,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('user.orders.create') }}">Order Pizza</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('topping.index') }}">Toppings</a>
+                    </li>
             </ul>
         </div>
     </div>
