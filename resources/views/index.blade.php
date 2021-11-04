@@ -1,11 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<h2>List</h2>
 <div class="row">
-    <div class="col">
-        <a class="btn btn-success" href="{{ route('user.orders.create') }}">Order Pizza</a>
-    </div>
+    <div class="col-1"></div>
+    <div class="col"><h3>Pizza List</h3></div>
 </div>
 <div class="row">
     <div class="col-1"></div>
@@ -13,20 +11,26 @@
     @if ($orders->count() == 0)
         <p>No orders yet.</p>
     @else
-        <div class="row">
-            <div class="col"><b>ID</b></div>
-            <div class="col"><b>Type</b></div>
-            <div class="col"><b>Toppings</b></div>
-            <div class="col"><b>Price</b></div>
-        </div>
-        @foreach ($orders as $order)
-            <div class="row">
-                <div class="col">{{ $order->id }}</div>
-                <div class="col">{{ $order->type }}</div>
-                <div class="col">{{ $order->toppings }}</div>
-                <div class="col">{{ $order->price }}</div>
-            </div>
-        @endforeach
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Toppings</th>
+                    <th scope="col">Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($orders as $order)
+                    <tr>
+                        <th scope="row">{{ $order->id }}</th>
+                        <td>{{ $order->type }}</td>
+                        <td>{{ $order->toppings }}</td>
+                        <td>{{ $order->price }} euro</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
     @endif
     </div>
 </div>
