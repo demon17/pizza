@@ -7,7 +7,9 @@ Requirements are to create a pizza preparation with Laravel, Vue JS & Bootstrap 
 # Installation
 
 1. `composer install` && `composer update`
+1. create `.env` from `.env.example`, config connection & add db `pizza` to mysql
 1. `php artisan migrate`   
+1. `php artisan key:generate`   
 1. `php artisan db:seed --class=ToppingSeeder`   
 1. `npm install`
 1. `npm run dev`
